@@ -4,6 +4,7 @@ RUN npm install -g nodemon #для debug
 WORKDIR /usr/src/app
 COPY package*.json ./
 COPY prisma ./prisma/
+RUN npm cache clean --force
 RUN npm install
 COPY . .
 RUN npm run build

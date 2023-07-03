@@ -59,8 +59,11 @@ export class UserService {
   }
 
   findBySlug(slug: string): Promise<User> {
-    //return this.repository.findByCriteria<string>('slug', slug);
-    return Promise.resolve({} as User);
+    return this.prisma.user.findUnique({
+      where: {
+        slug,
+      },
+    });
   }
 
   async checkFieldBusy(

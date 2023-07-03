@@ -1,4 +1,4 @@
-import { RegisterDto } from '../../auth/dto/register.dto';
+import { RegisterDto } from '../../auth/types/register.dto';
 import { OmitType } from '@nestjs/swagger';
 
 export class CreateUserInput extends OmitType(RegisterDto, [
